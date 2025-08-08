@@ -1,0 +1,100 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateUsuarioInput {
+  aceptaTerminos: Boolean
+  apellidoMaterno: String
+  apellidoPaterno: String!
+  codigoPostal: String
+  colonia: String
+  edad: Float
+  email: String!
+  entidad: String
+  estadoCivil: String
+  estatus: String
+  fechaNacimiento: String
+  hobbies: [String!]
+  idioma: String
+  municipio: String
+  nivelEducativo: String
+  nombre: String!
+  notasAdicionales: String
+  ocupacion: String
+  peso: Float
+  sexo: String
+  talla: Float
+}
+
+input FiltroUsuarioInput {
+  email: String
+  nombre: String
+}
+
+type Mutation {
+  actualizarUsuario(id: String!, input: UpdateUsuarioInput!): Usuario!
+  crearUsuario(input: CreateUsuarioInput!): Usuario!
+  eliminarUsuario(id: String!): Boolean!
+}
+
+type PaginadoUsuarioType {
+  paginaActual: Int!
+  paginas: Int!
+  total: Int!
+  usuarios: [Usuario!]!
+}
+
+type Query {
+  usuario(id: String!): Usuario!
+  usuarios: [Usuario!]!
+  usuariosPaginado(filtro: FiltroUsuarioInput, limite: Int!, pagina: Int!): PaginadoUsuarioType!
+}
+
+input UpdateUsuarioInput {
+  aceptaTerminos: Boolean
+  apellidoMaterno: String
+  apellidoPaterno: String
+  codigoPostal: String
+  colonia: String
+  edad: Int
+  email: String
+  entidad: String
+  estadoCivil: String
+  estatus: String
+  fechaNacimiento: String
+  hobbies: [String!]
+  idioma: String
+  municipio: String
+  nivelEducativo: String
+  nombre: String
+  notasAdicionales: String
+  ocupacion: String
+  peso: Float
+  sexo: String
+  talla: Float
+}
+
+type Usuario {
+  aceptaTerminos: Boolean
+  apellidoMaterno: String
+  apellidoPaterno: String!
+  codigoPostal: String
+  colonia: String
+  edad: Float
+  email: String!
+  entidad: String
+  estadoCivil: String
+  estatus: String
+  fechaNacimiento: String
+  hobbies: [String!]
+  id: ID!
+  idioma: String
+  municipio: String
+  nivelEducativo: String
+  nombre: String!
+  notasAdicionales: String
+  ocupacion: String
+  peso: Float
+  sexo: String
+  talla: Float
+}
